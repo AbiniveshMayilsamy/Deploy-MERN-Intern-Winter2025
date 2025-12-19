@@ -135,7 +135,7 @@ function Quiz() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [quiz, showLeaderboard, currentQuestion]);
+  }, [quiz, showLeaderboard, currentQuestion, handleNext]);
 
   if (!quiz || !student) return <div className="quiz-loading">Loading Quiz...</div>;
 
@@ -145,7 +145,6 @@ function Quiz() {
 
   const question = quiz.questions[currentQuestion];
   const timePercentage = (timeLeft / 30) * 100;
-  const rotation = (timePercentage / 100) * 360;
   const imageUrl = question.imageId ? `https://res.cloudinary.com/${cloudinaryCloudName}/image/upload/${question.imageId}` : null;
 
   return (
