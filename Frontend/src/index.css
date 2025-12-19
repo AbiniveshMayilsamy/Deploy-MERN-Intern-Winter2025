@@ -13,7 +13,13 @@ body {
 
 h1, h2, h3, .main-heading {
   font-family: 'Press Start 2P', monospace;
-  line-height: 1.4;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+.signup-header h1, .login-header h1, .signup-logo-text h2, .login-logo-text h2 {
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 input, select, textarea, button {
