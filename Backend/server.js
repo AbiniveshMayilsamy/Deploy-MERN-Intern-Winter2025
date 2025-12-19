@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 require("dotenv").config();
 
 const { connectDB, getDBStatus } = require("./config/db");
@@ -31,14 +30,7 @@ app.get("/api/status", (req, res) => {
   });
 });
 
-// Serve static files in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../Frontend/build")));
-  
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../Frontend/build/index.html"));
-  });
-}
+
 
 const PORT = process.env.PORT || 5000;
 
