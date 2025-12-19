@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://deploy-mern-intern-winter2025-m.onrender.com/api";
 const BACKEND_URL = "https://deploy-mern-intern-winter2025-m.onrender.com";
 
 export const apiCall = async (endpoint, method = "GET", data = null) => {
