@@ -10,12 +10,10 @@ const quizRoutes = require("./routes/quizRoutes");
 const app = express();
 
 // CORS configuration
-const corsOptions = {
-  origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+app.use(cors({
+  origin: true,
   credentials: true
-};
-
-app.use(cors(corsOptions));
+}));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
