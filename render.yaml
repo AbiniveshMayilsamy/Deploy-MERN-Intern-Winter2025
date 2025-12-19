@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: quiz-portal-backend
+    env: node
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: quiz-portal-frontend
+    env: static
+    buildCommand: cd Frontend && npm install && npm run build
+    staticPublishPath: Frontend/build
+    envVars:
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,25 @@
+{
+  "name": "quiz-portal",
+  "version": "1.0.0",
+  "description": "Quiz Portal MERN Application",
+  "main": "Backend/server.js",
+  "scripts": {
+    "install-all": "npm install && cd Backend && npm install && cd ../Frontend && npm install",
+    "dev": "concurrently \"cd Backend && npm run dev\" \"cd Frontend && npm start\"",
+    "start": "cd Backend && npm start",
+    "backend": "cd Backend && npm start",
+    "frontend": "cd Frontend && npm start",
+    "build": "cd Frontend && npm run build",
+    "heroku-postbuild": "cd Backend && npm install && cd ../Frontend && npm install && npm run build"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "keywords": ["quiz", "mern", "react", "nodejs", "mongodb"],
+  "author": "",
+  "license": "MIT"
+}
