@@ -151,6 +151,24 @@ function Admin() {
               </button>
             </div>
 
+            <div className="quiz-list-section">
+              <h3>Created Quizzes</h3>
+              {backendQuizzes.length === 0 ? (
+                <p className="no-data">No quizzes created yet</p>
+              ) : (
+                <div className="quiz-list">
+                  {backendQuizzes.map((quiz, idx) => (
+                    <div key={quiz.id || idx} className="quiz-item">
+                      <h4>{quiz.title}</h4>
+                      <p>Class: {quiz.className}</p>
+                      <p>Questions: {quiz.questions?.length || 0}</p>
+                      <p>Time Limit: {quiz.timeLimit}s per question</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {showAddClass && (
               <div style={{ backgroundColor: "white", padding: "20px", borderRadius: "10px", marginBottom: "20px" }}>
                 <h3>Add New Class</h3>
@@ -165,7 +183,7 @@ function Admin() {
               </div>
             )}
 
-            <h3 style={{ marginTop: "30px" }}>Create Quiz</h3>
+            <h3 style={{ marginTop: "30px" }}>Create New Quiz</h3>
             <form onSubmit={handleSubmit(onSubmitQuiz)}>
               <input {...register("title", { required: true })} placeholder="Quiz Title" className="admin-input" />
               

@@ -347,15 +347,43 @@
 }
 
 @media (max-width: 768px) {
+  .login-wrapper {
+    padding: 10px;
+  }
+  
   .login-container {
     flex-direction: column;
+    max-width: 100%;
+    margin: 0;
   }
 
   .login-logo-section {
-    padding: 30px;
+    padding: 20px;
+  }
+  
+  .login-logo-img {
+    height: 80px;
+  }
+  
+  .login-logo-text h2 {
+    font-size: 20px;
   }
 
   .login-form-section {
-    padding: 30px;
+    padding: 20px;
+  }
+  
+  .login-header h1 {
+    font-size: 24px;
+  }
+  
+  .login-input {
+    padding: 14px;
+    font-size: 16px;
+  }
+  
+  .login-button {
+    padding: 14px;
+    font-size: 16px;
   }
 }

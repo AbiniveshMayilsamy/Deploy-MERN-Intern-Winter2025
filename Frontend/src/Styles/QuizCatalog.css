@@ -415,3 +415,58 @@
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 15px;
+    min-height: 300px;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .hero-stats {
+    gap: 20px;
+  }
+  
+  .stat-box {
+    padding: 15px 20px;
+  }
+  
+  .catalog-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .catalog-title {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .filter-section {
+    justify-content: center;
+  }
+  
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .catalog-card {
+    padding: 20px;
+  }
+  
+  .contact-section {
+    padding: 40px 15px;
+  }
+  
+  .contact-section-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

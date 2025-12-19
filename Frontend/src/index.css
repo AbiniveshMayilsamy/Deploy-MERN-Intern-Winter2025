@@ -1,36 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap');
-
 * {
-  font-family: 'Orbitron', 'Press Start 2P', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Orbitron', 'Press Start 2P', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: 600;
+}
+
+h1, h2, h3, .main-heading {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.4;
+}
+
+input, select, textarea, button {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Press Start 2P', 'Orbitron', sans-serif;
-  font-weight: 700;
-  letter-spacing: 2px;
+/* Global mobile styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  button {
+    min-height: 44px;
+  }
+  
+  input, select, textarea {
+    font-size: 16px;
+    min-height: 44px;
+  }
 }
 
-button {
-  font-family: 'Orbitron', 'Press Start 2P', sans-serif;
-  letter-spacing: 1px;
-}
-
-input, textarea, select {
-  font-family: 'Orbitron', 'Press Start 2P', sans-serif;
-}
-
-p, span, a {
-  font-family: 'Orbitron', sans-serif;
+/* Prevent zoom on input focus on iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select, textarea, input[type="text"], input[type="password"], 
+  input[type="datetime"], input[type="datetime-local"], 
+  input[type="date"], input[type="month"], input[type="time"], 
+  input[type="week"], input[type="number"], input[type="email"], 
+  input[type="url"], input[type="search"], input[type="tel"], 
+  input[type="color"] {
+    font-size: 16px;
+  }
 }
