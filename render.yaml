@@ -7,14 +7,15 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 10000
+      - key: MONGODB_URI
+        value: mongodb+srv://Abinivesh_M:Abinivesh%402007@cluster0.agf1q7w.mongodb.net/quizportal
+      - key: JWT_SECRET
+        value: quiz_portal_secret_2024
+      - key: CORS_ORIGIN
+        value: "*"
 
   - type: web
     name: quiz-portal-frontend
     env: static
-    buildCommand: cd Frontend && npm install && npm run build
+    buildCommand: cd Frontend && npm install && REACT_APP_API_URL=https://quiz-portal-backend.onrender.com/api npm run build
     staticPublishPath: Frontend/build
-    envVars:
-      - key: NODE_ENV
-        value: production
