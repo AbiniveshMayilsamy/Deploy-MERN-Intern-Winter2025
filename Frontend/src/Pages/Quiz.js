@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import QuizLeaderboard from "../Components/QuizLeaderboard";
 import "../Styles/Quiz.css";
@@ -68,7 +68,7 @@ function Quiz() {
     setAnswers(newAnswers);
   }
 
-  function handleNext() {
+  const handleNext = useCallback(() => {
     if (!quiz) return;
 
     const isCorrect = answers[currentQuestion] === quiz.questions[currentQuestion].answer;
@@ -119,7 +119,7 @@ function Quiz() {
         navigate("/quiz/leaderboard");
       }
     }, 3000);
-  }
+  }, [quiz, currentQuestion, answers, timeLeft, totalScore, student, id, navigate]);
 
   useEffect(() => {
     if (!quiz || showLeaderboard) return;
